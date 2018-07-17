@@ -33,6 +33,7 @@ function setup() //appeler qu'une fois au début et elle nous sert à paramétre
     canvas = createCanvas();
     //création de périmètre de travail
     camera = createCapture(VIDEO);
+    windowResized()
     canvas.size(largeur, hauteur)
     //taille de la largeur et de la hauteur
     slider = createSlider(0, 255, seuil)
@@ -62,18 +63,19 @@ function setup() //appeler qu'une fois au début et elle nous sert à paramétre
     text()
     textSize(200)
     buttonsuivant = createButton("suivant")
-    buttonsuivant.position(0,365)
-    buttonsuivant.size(80,30)
+    buttonsuivant.size(80,80)
+    buttonsuivant.position(largeur-buttonsuivant.height,hauteur-buttonsuivant.height)
     buttonsuivant.mousePressed(suivant)
     buttonHide = createButton('Cacher')
     buttonHide.mousePressed(hideshow)
-    buttonHide.position(10, 80)
+    buttonHide.size(70,30)
+    buttonHide.position(10,hauteur-buttonHide.height)
     buttonPleinEcran = createButton("PleinEcran")
     buttonPleinEcran.position(610,370)
     buttonPleinEcran.mousePressed(PleinEcran)
     buttonPleinEcran.size(80,28)
     buttonPhoto.size(50,30)
-    buttonHide.size(70,30)
+    
 
 }
 function draw() //dessiner chaque image que l'on voit à l'ecran

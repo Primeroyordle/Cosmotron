@@ -31,19 +31,21 @@ var sliderchange
 function setup() //appeler qu'une fois au début et elle nous sert à paramétrer toute nos variables
 {
     canvas = createCanvas();
+    largeur = windowWidth
+    hauteur = windowHeight
     //création de périmètre de travail
     camera = createCapture(VIDEO);
-    windowResized()
-    canvas.size(largeur, hauteur)
+
+    //canvas.size(largeur, hauteur)
     //taille de la largeur et de la hauteur
     slider = createSlider(0, 255, seuil)
     //permet de créer le curseur
-    slider.position(100, 10);
+    
     slider.input(sliderchange)
     //la position du curseur
-    slider.style('width', '80px');
+   // slider.style('width', '80px');
     //permet de donner la largeur du slider à 80px
-    camera.size(largeur, hauteur);
+    //camera.size(largeur, hauteur);
     //taille de l'affichage de la vidéo
     pixelDensity(1)
     //dennsité des pixels
@@ -56,26 +58,19 @@ function setup() //appeler qu'une fois au début et elle nous sert à paramétre
     //fichier à télécharger pour l'image de fond
     buttonPhoto = createButton('Photo');
     //créer le bouton
-    buttonPhoto.position(643,7);
     //positionne
     buttonPhoto.mousePressed(comptearebours);
     //quand tu clique sur le bouton la fonction photo est apeller
     text()
     textSize(200)
     buttonsuivant = createButton("suivant")
-    buttonsuivant.size(80,80)
-    buttonsuivant.position(largeur-buttonsuivant.height,hauteur-buttonsuivant.height)
     buttonsuivant.mousePressed(suivant)
     buttonHide = createButton('Cacher')
     buttonHide.mousePressed(hideshow)
-    buttonHide.size(70,30)
-    buttonHide.position(10,hauteur-buttonHide.height)
     buttonPleinEcran = createButton("PleinEcran")
-    buttonPleinEcran.position(610,370)
     buttonPleinEcran.mousePressed(PleinEcran)
-    buttonPleinEcran.size(80,28)
-    buttonPhoto.size(50,30)
-    
+          
+           windowResized()
 
 }
 function draw() //dessiner chaque image que l'on voit à l'ecran
@@ -94,7 +89,7 @@ function draw() //dessiner chaque image que l'on voit à l'ecran
 
 }
 function dessinerCamera() {
-    if (camera.width == 0) {
+    if (camera.width == 0 &&camera.imageData) {
         camera.width = camera.imageData.width
         camera.height = camera.imageData.height
     }
@@ -241,10 +236,25 @@ function windowResized() {
     hauteur = windowHeight
     canvas.size(largeur, hauteur)
     camera.size(largeur, hauteur)
+    positionner_button()
 }
 function PleinEcran() {
     var fs = fullscreen()
     fullscreen(!fs);
-
 }
+  
+    
+function positionner_button(){
+ slider.size(400,50)  
+ slider.position(largeur/2-slider.width/2, 40);
+ buttonPhoto.size(100,50)
+ buttonPhoto.position(largeur/2-buttonPhoto.width/2,hauteur-buttonPhoto.height);
+ buttonPleinEcran.size(80,28)
+ buttonPleinEcran.position(largeur-buttonPleinEcran.width,0)
+ buttonHide.size(73,73)
+ buttonHide.position(0,hauteur-buttonHide.height)
+ buttonsuivant.size(80,80)
+ buttonsuivant.position(largeur-buttonsuivant.height,hauteur-buttonsuivant.height)
+}
+
 

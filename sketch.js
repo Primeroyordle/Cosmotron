@@ -62,7 +62,7 @@ function setup() //appeler qu'une fois au début et elle nous sert à paramétre
     buttonPhoto.mousePressed(comptearebours);
     //quand tu clique sur le bouton la fonction photo est apeller
     text()
-    textSize(200)
+    textSize(0)
     buttonsuivant = createButton("suivant")
     buttonsuivant.mousePressed(suivant)
     buttonHide = createButton('Cacher')
@@ -246,14 +246,14 @@ function PleinEcran() {
     
 function positionner_button(){
  slider.size(400,50)  
- slider.position(largeur/2-slider.width/2, 40);
- buttonPhoto.size(100,50)
+ slider.position(largeur/2-slider.width/2,40);
+ buttonPhoto.size(300,200)
  buttonPhoto.position(largeur/2-buttonPhoto.width/2,hauteur-buttonPhoto.height);
- buttonPleinEcran.size(80,28)
+ buttonPleinEcran.size(160,160)
  buttonPleinEcran.position(largeur-buttonPleinEcran.width,0)
- buttonHide.size(73,73)
+ buttonHide.size(160,160)
  buttonHide.position(0,hauteur-buttonHide.height)
- buttonsuivant.size(80,80)
+ buttonsuivant.size(150,150)
  buttonsuivant.position(largeur-buttonsuivant.height,hauteur-buttonsuivant.height)
 }
 

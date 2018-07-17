@@ -1,0 +1,11 @@
+                 COSMOTRON 0.1
+
+Ce logiciel sert a faire une photo avec plusieur fond different 
+1: Lancer web server for chrome
+2: Lancer le dossier Cosmotron puis source avec web server
+3: Vous voila sur le site
+4: Vous pouvez en cliquand avec votre sourie sur une couleur la retirer  
+5: Avec le curseur vous pouvez changer le seuil de sensibiliter du fond
+6: Le bouton photo sert a prendre une photo de vous avez un décompte de 5seconde  
+
+Neut pas me contacter  

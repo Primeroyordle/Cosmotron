@@ -3,7 +3,7 @@ var camera;
 
 var canvas;
 //périmètre de travail
-var largeur = 600
+var largeur = 700
 //dimension du périmètre en largeur
 var hauteur = 400
 //dimension du périmètre en hauteur
@@ -32,12 +32,10 @@ function setup() //appeler qu'une fois au début et elle nous sert à paramétre
 {
     canvas = createCanvas();
     //création de périmètre de travail
+    camera = createCapture(VIDEO);
     canvas.size(largeur, hauteur)
     //taille de la largeur et de la hauteur
-    camera = createCapture(VIDEO);
-    //vidéo
     slider = createSlider(0, 255, seuil)
-
     //permet de créer le curseur
     slider.position(100, 10);
     slider.input(sliderchange)
@@ -57,21 +55,25 @@ function setup() //appeler qu'une fois au début et elle nous sert à paramétre
     //fichier à télécharger pour l'image de fond
     buttonPhoto = createButton('Photo');
     //créer le bouton
-    buttonPhoto.position(18, 350);
+    buttonPhoto.position(643,7);
     //positionne
     buttonPhoto.mousePressed(comptearebours);
     //quand tu clique sur le bouton la fonction photo est apeller
     text()
-    textSize(100)
+    textSize(200)
     buttonsuivant = createButton("suivant")
-    buttonsuivant.position(20, 300)
+    buttonsuivant.position(0,365)
+    buttonsuivant.size(80,30)
     buttonsuivant.mousePressed(suivant)
     buttonHide = createButton('Cacher')
     buttonHide.mousePressed(hideshow)
-    buttonHide.position(430, 10)
+    buttonHide.position(10, 80)
     buttonPleinEcran = createButton("PleinEcran")
-    buttonPleinEcran.position(480, 370)
+    buttonPleinEcran.position(610,370)
     buttonPleinEcran.mousePressed(PleinEcran)
+    buttonPleinEcran.size(80,28)
+    buttonPhoto.size(50,30)
+    buttonHide.size(70,30)
 
 }
 function draw() //dessiner chaque image que l'on voit à l'ecran
